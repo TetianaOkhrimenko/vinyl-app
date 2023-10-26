@@ -1,5 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&family=Poppins&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.header {
+  background-color: #083644;
+  height: 62px;
+  padding: 18px;
+  display: flex;
+  gap: 20px;
+}
+
+.header__link-back {
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+}
+
+.header__link-back::before {
+  align-self: center;
+  display: inline-block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(135deg);
+  cursor: pointer;
+}
+
+.hero__form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #edeef0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: #6c7072;
+}
+
+.hero__name-input {
+  padding: 10px;
+  border: 1px solid #edeef0;
+  border-radius: 3px;
+}
+
+.hero__select {
+  padding: 10px;
+  color: #6c7072;
+  border: 1px solid #edeef0;
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.hero__btn {
+  background-color: #083644;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  border: 1px solid #083644;
+  border-radius: 3px;
 }

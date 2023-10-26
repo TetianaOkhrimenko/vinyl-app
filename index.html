@@ -8,51 +8,72 @@
   </head>
   <body>
     <header class="header">
-      <button>Back</button>
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M21 9.32647C21 14.4974 12 20 12 20C12 20 3 14.4974 3 9.32647C3 2.30564 12 2.40044 12 8.57947C12 2.40044 21 2.49288 21 9.32647Z"
-          stroke="white"
-          stroke-width="2"
-          stroke-linejoin="round"
-        />
-      </svg>
-
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M21 18.2222V9.33333C21 8.86184 20.8104 8.40965 20.4728 8.07625C20.1352 7.74286 19.6774 7.55556 19.2 7.55556H13.1124C12.7781 7.55554 12.4503 7.46356 12.1659 7.28992C11.8816 7.11628 11.6518 6.86783 11.5023 6.57244L10.6977 4.98311C10.5482 4.68759 10.3182 4.43906 10.0337 4.2654C9.74912 4.09175 9.4212 3.99985 9.0867 4H4.8C4.32261 4 3.86477 4.1873 3.52721 4.5207C3.18964 4.8541 3 5.30628 3 5.77778V18.2222C3 18.6937 3.18964 19.1459 3.52721 19.4793C3.86477 19.8127 4.32261 20 4.8 20H19.2C19.6774 20 20.1352 19.8127 20.4728 19.4793C20.8104 19.1459 21 18.6937 21 18.2222Z"
-          stroke="white"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+      <a href="#" class="header__link-back">Back</a>
+      <a href="#">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M21 9.32647C21 14.4974 12 20 12 20C12 20 3 14.4974 3 9.32647C3 2.30564 12 2.40044 12 8.57947C12 2.40044 21 2.49288 21 9.32647Z"
+            stroke="white"
+            stroke-width="2"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+      <a href="#">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M21 18.2222V9.33333C21 8.86184 20.8104 8.40965 20.4728 8.07625C20.1352 7.74286 19.6774 7.55556 19.2 7.55556H13.1124C12.7781 7.55554 12.4503 7.46356 12.1659 7.28992C11.8816 7.11628 11.6518 6.86783 11.5023 6.57244L10.6977 4.98311C10.5482 4.68759 10.3182 4.43906 10.0337 4.2654C9.74912 4.09175 9.4212 3.99985 9.0867 4H4.8C4.32261 4 3.86477 4.1873 3.52721 4.5207C3.18964 4.8541 3 5.30628 3 5.77778V18.2222C3 18.6937 3.18964 19.1459 3.52721 19.4793C3.86477 19.8127 4.32261 20 4.8 20H19.2C19.6774 20 20.1352 19.8127 20.4728 19.4793C20.8104 19.1459 21 18.6937 21 18.2222Z"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
     </header>
     <section class="hero">
       <form class="hero__form">
-        <input type="text" />
-        <select name="" id="">
+        <input type="text" class="hero__name-input" placeholder="Artist" />
+        <select name="" id="" class="hero__select">
           <option value="option-0">Genre</option>
+          <option value="electronic">Electronic</option>
+          <option value="pop">Pop</option>
+          <option value="folk, world, & country">Folk, World, & Country</option>
+          <option value="rock">Rock</option>
+          <option value="jazz">Jazz</option>
         </select>
-        <select name="" id="">
+        <select name="" id="" class="hero__select">
           <option value="option-0">Decade</option>
+          <option>1950-60 рр.</option>
+          <option>1960-70 рр.</option>
+          <option>1970-80 рр.</option>
+          <option>1980-90 рр.</option>
+          <option>1990-00 рр.</option>
+          <option>2000-10 рр.</option>
+          <option>2010-20 рр.</option>
+          <option>2020-30 рр.</option>
         </select>
-        <select name="" id="">
+        <select name="" id="" class="hero__select">
           <option value="option-0">Country</option>
+          <option>US</option>
+          <option>UK</option>
+          <option>Germany</option>
+          <option>France</option>
+          <option>Japan</option>
         </select>
-        <button>Search</button>
+        <button class="hero__btn">Search</button>
       </form>
       <div class="hero__collection">
         <article></article>
