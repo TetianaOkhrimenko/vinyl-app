@@ -14,16 +14,26 @@
   gap: 20px;
 }
 
-.header__link-back {
+.header svg path {
+  transition: all 400ms ease-in-out;
+}
+
+.header svg:hover path {
+  stroke: #ff5d9e;
+}
+
+.header__btn-back {
   color: #ffffff;
   font-size: 18px;
   font-family: "Poppins", sans-serif;
-  text-decoration: none;
   cursor: pointer;
   display: flex;
+  border: none;
+  background-color: transparent;
+  transition: all 400ms ease-in-out;
 }
 
-.header__link-back::before {
+.header__btn-back::before {
   align-self: center;
   display: inline-block;
   content: "";
@@ -34,6 +44,10 @@
   border-bottom: 2px solid #ffffff;
   transform: rotate(135deg);
   cursor: pointer;
+}
+
+.header__btn-back:hover {
+  color: #ff5d9e;
 }
 
 .hero__form {

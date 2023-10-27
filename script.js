@@ -3,12 +3,17 @@
 //VARIABLES
 
 //DOM ELEMENTS
+const backButton = document.querySelector(".header__btn-back");
 const footer = document.querySelector(".footer");
 const favouriteIcons = document.querySelectorAll(".hero__favourite-box");
 const collection = document.querySelector(".hero__collection");
 const footerPages = document.querySelectorAll(".footer__btn");
 
 //FUNCTIONS
+
+function handleBackButton() {
+  window.history.back();
+}
 
 function handleFavouriteIcon(event) {
   if (event.target.className === "hero__favourite-box") {
@@ -32,5 +37,6 @@ function handleActivePagination(event) {
 }
 
 //EVENT LISTENERS
+backButton.addEventListener("click", handleBackButton);
 collection.addEventListener("click", handleFavouriteIcon);
 footer.addEventListener("click", handleActivePagination);
