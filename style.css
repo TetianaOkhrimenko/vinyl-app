@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&family=Poppins&display=swap");
 
+:root {
+  --main-font: "Plus Jakarta Sans", sans-serif;
+  --secondary-font: "Poppins", sans-serif;
+  --transition: all 400ms ease-in-out;
+  --hover-color: #ff5d9e;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -31,22 +38,22 @@
 }
 
 .header svg path {
-  transition: all 400ms ease-in-out;
+  transition: var(--transition);
 }
 
 .header svg:hover path {
-  stroke: #ff5d9e;
+  stroke: var(--hover-color);
 }
 
 .header__btn-back {
   color: #ffffff;
+  background-color: transparent;
   font-size: 18px;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--secondary-font);
   cursor: pointer;
   display: flex;
   border: none;
-  background-color: transparent;
-  transition: all 400ms ease-in-out;
+  transition: var(--transition);
 }
 
 .header__btn-back::before {
@@ -63,7 +70,7 @@
 }
 
 .header__btn-back:hover {
-  color: #ff5d9e;
+  color: var(--hover-color);
 }
 
 .hero__form {
@@ -71,19 +78,19 @@
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
   gap: 20px;
   padding: 20px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--main-font);
   font-size: 16px;
   line-height: 20px;
   color: #6c7072;
 }
 
 .hero__name-input {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--main-font);
   font-size: 16px;
   padding: 10px;
   border: 1px solid #edeef0;
   border-radius: 3px;
-  transition: all 400ms ease-in-out;
+  transition: var(--transition);
 }
 
 .hero__name-input:focus {
@@ -104,8 +111,8 @@
   border-radius: 3px;
   font-size: 16px;
   line-height: 20px;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  transition: all 400ms ease-in-out;
+  font-family: var(--main-font);
+  transition: var(--transition);
 }
 
 .hero__select:focus {
@@ -125,17 +132,17 @@
   font-size: 16px;
   line-height: 20px;
   cursor: pointer;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--main-font);
   border: 1px solid #083644;
   border-radius: 4px;
-  transition: all 400ms ease-in-out;
+  transition: var(--transition);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .hero__btn:hover {
-  background-color: #ff5d9e;
-  border: 1px solid #ff5d9e;
+  background-color: var(--hover-color);
+  border: 1px solid var(--hover-color);
 }
 .hero__error-wrapper {
   height: 20px;
@@ -143,11 +150,11 @@
 }
 
 .hero__error-message {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--main-font);
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  color: #ff5d9e;
+  color: var(--hover-color);
   display: none;
 }
 
@@ -161,7 +168,7 @@
 
 .hero__card {
   justify-self: center;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--main-font);
   font-size: 18px;
   color: #0a2530;
 }
@@ -234,7 +241,7 @@
 
 .hero__card-btn {
   background-color: #0a2530;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: var(--main-font);
   font-weight: 500;
   font-size: 18px;
   line-height: 20px;
@@ -246,14 +253,14 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  transition: all 400ms ease-in-out;
+  transition: var(--transition);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .hero__card-btn:hover {
-  background-color: #ff5d9e;
-  border: 1px solid #ff5d9e;
+  background-color: var(--hover-color);
+  border: 1px solid var(--hover-color);
 }
 
 .hero__card-btn::after {
@@ -284,17 +291,17 @@
   font-size: 18px;
   line-height: 20px;
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--secondary-font);
   color: #738286;
   cursor: pointer;
-  transition: all 400ms ease-in-out;
+  transition: var(--transition);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .btn--hover:hover {
-  border: 1px solid #e7eaf6;
-  background-color: #e7eaf6;
+  border: 1px solid #f3c8d9;
+  background-color: #f3c8d9;
 }
 
 .btn--active {
@@ -306,6 +313,12 @@
   padding: 12px;
   text-align: center;
   color: #ffffff;
+}
+
+@media (max-width: 1200px) {
+  .hero__collection {
+    grid-template-columns: 40% 40%;
+  }
 }
 
 @media (max-width: 992px) {

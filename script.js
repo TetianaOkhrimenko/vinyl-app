@@ -2,7 +2,7 @@
 
 //VARIABLES
 const STORAGE_KEY = "isActive";
-let results = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [
+let favouriteIconsArray = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [
   [],
   [],
   [],
@@ -23,10 +23,7 @@ const footerPages = document.querySelectorAll(".footer__btn");
 //LOCAL STORAGE
 
 favouriteIcons.forEach((icon, i) => {
-  // results.push([]);
-
-  // let lastElement = [...results][i].pop();
-  let lastElement = results[i][results[i].length - 1];
+  let lastElement = favouriteIconsArray[i][favouriteIconsArray[i].length - 1];
   if (lastElement === true) {
     icon.classList.add("favourite-box--active");
   } else {
@@ -39,7 +36,7 @@ if (!localStorage.getItem("pageNumber")) {
   footerPages[0].classList.remove("btn--hover");
 }
 
-footerPages.forEach((page, i) => {
+footerPages.forEach((page) => {
   if (page.textContent === localStorage.getItem("pageNumber")) {
     page.classList.add("btn--active");
     page.classList.remove("btn--hover");
@@ -61,27 +58,31 @@ function showErrorMessage(event) {
     errorMessage.style.animationFillMode = "forwards";
     setTimeout(() => {
       errorMessage.style.display = "none";
+      event.target.value = "";
     }, 5000);
   }
 }
 
-//Додавання платівки в колекцію
-/*function handleFavouriteIcon(event) {
-  if (event.target.nodeName === "DIV") {
-    event.target.classList.toggle("favourite-box--active");
-    if (event.target.className.includes("favourite-box--active")) {
-      results[i].push(true);
-    } else {
-      results[i].push(false);
-    }
-    localStorage.setItem("isActive", JSON.stringify(results));
-  }
-}*/
+function handleDotsButton(button) {
+  const pages = [5, 6, 7];
+  pages.forEach((p) => {
+    const page = document.createElement("button");
+    page.className = "footer__btn btn--hover";
+    page.setAttribute("data-page", p);
+    page.textContent = p;
+    button.before(page);
+  });
+  button.style.display = "none";
+}
 
 function handleActivePagination(event) {
-  event.preventDefault();
-
   if (event.target.nodeName === "BUTTON") {
+    if (event.target.className.includes("btn--dots")) {
+      handleDotsButton(event.target);
+    }
+
+    const footerPages = document.querySelectorAll(".footer__btn");
+
     footerPages.forEach((page) => {
       if (page !== event.target) {
         page.classList.remove("btn--active");
@@ -91,6 +92,14 @@ function handleActivePagination(event) {
     event.target.classList.add("btn--active");
     localStorage.setItem("pageNumber", event.target.textContent);
     event.target.classList.remove("btn--hover");
+
+    const dataPage = event.target.getAttribute("data-page");
+
+    if (dataPage !== "dots") {
+      const newUrl =
+        dataPage !== null ? `index.html?page=${dataPage}` : "index.html";
+      window.location.href = newUrl;
+    }
   }
 }
 
@@ -99,17 +108,16 @@ backButton.addEventListener("click", handleBackButton);
 
 input.addEventListener("input", showErrorMessage);
 
-//collection.addEventListener("click", handleFavouriteIcon);
 favouriteIcons.forEach((icon, i) => {
   icon.addEventListener("click", function (event) {
     if (event.target.nodeName === "DIV") {
       event.target.classList.toggle("favourite-box--active");
       if (event.target.className.includes("favourite-box--active")) {
-        results[i].push(true);
+        favouriteIconsArray[i].push(true);
       } else {
-        results[i].push(false);
+        favouriteIconsArray[i].push(false);
       }
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(results));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(favouriteIconsArray));
     }
   });
 });
